@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EulerChallenges")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9825d33b714728c35ab06353072f6b03711b9b33")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f946f2e252fe3bee295853a209881f47afdb892c")]
 [assembly: System.Reflection.AssemblyProductAttribute("EulerChallenges")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EulerChallenges")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
