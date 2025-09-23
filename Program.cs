@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -8,7 +8,7 @@ namespace EulerChallenges
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=== Project Euler Lösungen ===\n");
+            Console.WriteLine("Project Euler Lösungen\n");
             
             Console.WriteLine($"Problem 1: {SolveProblem1()}");
             Console.WriteLine($"Problem 2: {SolveProblem2()}");

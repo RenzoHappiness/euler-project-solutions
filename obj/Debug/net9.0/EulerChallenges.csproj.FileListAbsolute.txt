@@ -1,0 +1,15 @@
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.AssemblyInfoInputs.cache
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.AssemblyInfo.cs
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.csproj.CoreCompileInputs.cache
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.sourcelink.json
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\bin\Debug\net9.0\EulerChallenges.exe
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\bin\Debug\net9.0\EulerChallenges.deps.json
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\bin\Debug\net9.0\EulerChallenges.runtimeconfig.json
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\bin\Debug\net9.0\EulerChallenges.dll
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\bin\Debug\net9.0\EulerChallenges.pdb
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.dll
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\refint\EulerChallenges.dll
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.pdb
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\EulerChallenges.genruntimeconfig.cache
+C:\Users\Renzo\Desktop\eulers\EulerChallenges\obj\Debug\net9.0\ref\EulerChallenges.dll
