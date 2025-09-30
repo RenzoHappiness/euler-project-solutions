@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Renzo\\Desktop\\eulers\\EulerChallenges\\EulerChallenges.csproj": {}
+    "C:\\Users\\Renzo\\Desktop\\Portfolio\\eulers\\EulerChallenges\\EulerChallenges.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Renzo\\Desktop\\eulers\\EulerChallenges\\EulerChallenges.csproj": {
+    "C:\\Users\\Renzo\\Desktop\\Portfolio\\eulers\\EulerChallenges\\EulerChallenges.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Renzo\\Desktop\\eulers\\EulerChallenges\\EulerChallenges.csproj",
+        "projectUniqueName": "C:\\Users\\Renzo\\Desktop\\Portfolio\\eulers\\EulerChallenges\\EulerChallenges.csproj",
         "projectName": "EulerChallenges",
-        "projectPath": "C:\\Users\\Renzo\\Desktop\\eulers\\EulerChallenges\\EulerChallenges.csproj",
+        "projectPath": "C:\\Users\\Renzo\\Desktop\\Portfolio\\eulers\\EulerChallenges\\EulerChallenges.csproj",
         "packagesPath": "C:\\Users\\Renzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Renzo\\Desktop\\eulers\\EulerChallenges\\obj\\",
+        "outputPath": "C:\\Users\\Renzo\\Desktop\\Portfolio\\eulers\\EulerChallenges\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

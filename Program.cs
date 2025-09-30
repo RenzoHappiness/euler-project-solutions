@@ -31,6 +31,8 @@ namespace EulerChallenges
 			Console.WriteLine($"Problem 18: {SolveProblem18()}");
 			Console.WriteLine($"Problem 19: {SolveProblem19()}");
 			Console.WriteLine($"Problem 20: {SolveProblem20()}");
+			Console.WriteLine($"Problem 21: {SolveProblem21()}");
+			Console.WriteLine($"Problem 22: {SolveProblem22()}");
 		}
 
 		// Problem 1: Vielfache von 3 oder 5
@@ -631,43 +633,134 @@ namespace EulerChallenges
 			}
 			return dp[0];
 		}
-		
-			// Problem 19: Anzahl Sonntage am Ersten des Monats (1901-2000)
-			static int SolveProblem19()
+
+		// Problem 19: Anzahl Sonntage am Ersten des Monats (1901-2000)
+		static int SolveProblem19()
+		{
+			int anzahlSonntage = 0;
+
+			// Schleife durch alle Jahre von 1901 bis 2000
+			for (int jahr = 1901; jahr <= 2000; jahr++)
 			{
-				int anzahlSonntage = 0;
-
-				// Schleife durch alle Jahre von 1901 bis 2000
-				for (int jahr = 1901; jahr <= 2000; jahr++)
+				// Schleife durch alle Monate (1-12)
+				for (int monat = 1; monat <= 12; monat++)
 				{
-					// Schleife durch alle Monate (1-12)
-					for (int monat = 1; monat <= 12; monat++)
-					{
-						DateTime ersterDesMonats = new DateTime(jahr, monat, 1);
+					DateTime ersterDesMonats = new DateTime(jahr, monat, 1);
 
-						// Prüfe, ob der erste Tag des Monats ein Sonntag ist
-						if (ersterDesMonats.DayOfWeek == DayOfWeek.Sunday)
-							anzahlSonntage++;
-					}
+					// Prüfe, ob der erste Tag des Monats ein Sonntag ist
+					if (ersterDesMonats.DayOfWeek == DayOfWeek.Sunday)
+						anzahlSonntage++;
 				}
-
-				return anzahlSonntage;
 			}
 
-			// Problem 20: Quersumme von 100!
-			static int SolveProblem20()
-			{
-				// Berechne 100! (Fakultät)
-				BigInteger fakultaet = BigInteger.One;
-				
-				for (int i = 1; i <= 100; i++)
-				{
-					fakultaet *= i;
-				}
-				
-				// Berechne die Quersumme aller Ziffern
-				return fakultaet.ToString().Sum(ziffer => ziffer - '0');
+			return anzahlSonntage;
 		}
+
+		// Problem 20: Quersumme von 100!
+		static int SolveProblem20()
+		{
+			// Berechne 100! (Fakultät)
+			BigInteger fakultaet = BigInteger.One;
+
+			for (int i = 1; i <= 100; i++)
+			{
+				fakultaet *= i;
+			}
+
+			// Berechne die Quersumme aller Ziffern
+			return fakultaet.ToString().Sum(ziffer => ziffer - '0');
+		}
+			// Problem 21: Befreundete Zahlen (Amicable Numbers)
+		static int SolveProblem21()
+		{
+			int summe = 0;
+			
+			for (int a = 2; a < 10000; a++)
+			{
+				int b = SummeEchterTeiler(a);
+				
+				// Prüfe ob b != a und ob d(b) = a (befreundetes Paar)
+				if (b != a && b < 10000 && SummeEchterTeiler(b) == a)
+				{
+					summe += a;
+				}
+			}
+			
+			// Division durch 2, da jedes Paar doppelt gezählt wird
+			return summe / 2;
+		}
+
+		static int SummeEchterTeiler(int n)
+		{
+			if (n <= 1) return 0;
+			
+			int summe = 1; // 1 ist immer ein Teiler
+			int wurzel = (int)Math.Sqrt(n);
+			
+			for (int i = 2; i <= wurzel; i++)
+			{
+				if (n % i == 0)
+				{
+					summe += i;
+					// Füge auch den komplementären Teiler hinzu
+					if (i != n / i && n / i != n)
+						summe += n / i;
+				}
+			}
+			
+			return summe;
+		}
+
+		// Problem 22: Namen-Scores
+		static long SolveProblem22()
+		{
+			// Namen aus der Datei (oder direkt im Code für Demo)
+			string[] namen;
+			
+			// Versuche die Datei zu lesen, falls vorhanden
+			string dateipfad = "p022_names.txt";
+			if (File.Exists(dateipfad))
+			{
+				string inhalt = File.ReadAllText(dateipfad);
+				// Entferne Anführungszeichen und teile bei Kommas
+				namen = inhalt.Replace("\"", "").Split(',');
+			}
+			else
+			{
+				// Fallback: Beispieldaten
+				Console.WriteLine("Warnung: names.txt nicht gefunden. Verwend Beispieldaten.");
+				namen = new[] { "MARY", "PATRICIA", "LINDA", "BARBARA", "ELIZABETH" };
+			}
+			
+			// Sortiere alphabetisch
+			Array.Sort(namen);
+			
+			long gesamtsumme = 0;
+			
+			for (int i = 0; i < namen.Length; i++)
+			{
+				int alphabetischePosition = i + 1;
+				int namenswert = BerechneNamenswert(namen[i]);
+				gesamtsumme += alphabetischePosition * namenswert;
+			}
+			
+			return gesamtsumme;
+		}
+
+		static int BerechneNamenswert(string name)
+		{
+			int summe = 0;
+			foreach (char buchstabe in name.ToUpper())
+			{
+				if (buchstabe >= 'A' && buchstabe <= 'Z')
+				{
+					summe += buchstabe - 'A' + 1;
+				}
+			}
+			return summe;
+		}
+
+		
 
 	}
 }
