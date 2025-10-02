@@ -33,7 +33,10 @@ namespace EulerChallenges
 			Console.WriteLine($"Problem 20: {SolveProblem20()}");
 			Console.WriteLine($"Problem 21: {SolveProblem21()}");
 			Console.WriteLine($"Problem 22: {SolveProblem22()}");
-		}
+            Console.WriteLine($"Problem 23: {SolveProblem23()}");
+            Console.WriteLine($"Problem 24: {SolveProblem24()}");
+            Console.WriteLine($"Problem 25: {SolveProblem25()}");
+        }
 
 		// Problem 1: Vielfache von 3 oder 5
 		static int SolveProblem1()
@@ -760,10 +763,97 @@ namespace EulerChallenges
 			return summe;
 		}
 
-		
 
-	}
+        // Problem 23: Nicht-abundante Summen
+        static int SolveProblem23()
+        {
+            const int grenze = 28123;
+
+            // Finde alle abundanten Zahlen bis zur Grenze
+            List<int> abundanteZahlen = new List<int>();
+            for (int n = 1; n <= grenze; n++)
+            {
+                if (IstAbundant(n))
+                    abundanteZahlen.Add(n);
+            }
+
+            // Markiere alle Zahlen, die als Summe zweier abundanter Zahlen dargestellt werden können
+            bool[] kannAlsSummeDargestelltWerden = new bool[grenze + 1];
+
+            for (int i = 0; i < abundanteZahlen.Count; i++)
+            {
+                for (int j = i; j < abundanteZahlen.Count; j++)
+                {
+                    int summe = abundanteZahlen[i] + abundanteZahlen[j];
+                    if (summe <= grenze)
+                        kannAlsSummeDargestelltWerden[summe] = true;
+                    else
+                        break; // Alle weiteren Summen wären zu groß
+                }
+            }
+
+            // Summiere alle Zahlen, die NICHT als Summe dargestellt werden können
+            int gesamtsumme = 0;
+            for (int n = 1; n <= grenze; n++)
+            {
+                if (!kannAlsSummeDargestelltWerden[n])
+                    gesamtsumme += n;
+            }
+
+            return gesamtsumme;
+        }
+
+        static bool IstAbundant(int n)
+        {
+            return SummeEchterTeiler(n) > n;
+        }
+
+        // Problem 24: Lexikographische Permutationen
+        static string SolveProblem24()
+        {
+            // Finde die millionste Permutation von 0-9
+            char[] ziffern = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            int zielPosition = 1_000_000 - 1; // 0-basiert
+
+            // Verwende Faktorial-Zahlen-System
+            int[] fakultaeten = new int[10];
+            fakultaeten[0] = 1;
+            for (int i = 1; i < 10; i++)
+                fakultaeten[i] = fakultaeten[i - 1] * i;
+
+            List<char> verfuegbar = new List<char>(ziffern);
+            string ergebnis = "";
+
+            for (int stelle = 9; stelle >= 0; stelle--)
+            {
+                int index = zielPosition / fakultaeten[stelle];
+                ergebnis += verfuegbar[index];
+                verfuegbar.RemoveAt(index);
+                zielPosition %= fakultaeten[stelle];
+            }
+
+            return ergebnis;
+        }
+
+        // Problem 25: 1000-stellige Fibonacci-Zahl
+        static int SolveProblem25()
+        {
+            BigInteger vorige = BigInteger.One;
+            BigInteger aktuelle = BigInteger.One;
+            int index = 2;
+
+            while (aktuelle.ToString().Length < 1000)
+            {
+                BigInteger naechste = vorige + aktuelle;
+                vorige = aktuelle;
+                aktuelle = naechste;
+                index++;
+            }
+
+            return index;
+        }
+
+
+
+    }
 }
-
-
-		
